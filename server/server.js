@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors());
-app.listen(PORT,()=>{
+app.listen(process.env.PORT | PORT,()=>{
     mongoClient.connect(url,{useNewUrlParser:true},(error,client)=>{
         if(error){
             throw error;
