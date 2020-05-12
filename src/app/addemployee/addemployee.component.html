@@ -5,9 +5,9 @@
     <div class="alert alert-danger" *ngIf="errorMsg">
         {{errorMsg}}
     </div>
-    <div class="card mx-auto justify-content-center" style="width:fit-content;"> 
+    <div class="card"> 
         <div class="card-body">
-            <form class="mx-auto"  action="" id="addForm" style="width:500px;" #employeeForm="ngForm" novalidate (ngSubmit)="onSubmit()" >
+            <form action="" id="addForm"  #employeeForm="ngForm" novalidate (ngSubmit)="onSubmit()" >
                 <!-- {{employeeForm.value| json}} -->
                 <!-- {{em | json}} -->
                 <div class="form-group row">
