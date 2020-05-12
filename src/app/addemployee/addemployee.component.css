@@ -1,0 +1,26 @@
+.form-group{
+    width: 100%;
+}
+
+/* #addForm{
+    margin-top: 50px;
+} */
+/* #addForm{
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    vertical-align: middle;
+    float: none;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+/* div.container-fluid{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+small{
+    color: red;
+}

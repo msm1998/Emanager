@@ -1,0 +1,36 @@
+<div  class="container">
+    <div >
+        <input id="search" type="text" [(ngModel)]="searchTerm" name="searchTerm" class="form-control form-control-lg" placeholder="Serach Employee">       
+    </div>
+    <h3  *ngIf="error" class="text-center alert alert-danger notify"> {{error}}</h3>
+    <h3 *ngIf="loading==true" class="text-center alert alert-success notify">loading...</h3> 
+    <cdk-virtual-scroll-viewport *ngIf="!loading" itemSize="100" style="height:600px;width: 100%;overflow-x: hidden;" id="parent">   
+        <div class="row" id="child">
+            <!-- <div class="col mb-4">
+            </div> -->
+            <!-- <div class="card-columns"> -->
+                <div class="col-3" style="max-width: 18rem;" *cdkVirtualFor="let employee of filteredEmployees"> 
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-header">
+                        <h5 class="card-title">{{employee.id}}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Name: {{employee.firstName | titlecase }} {{employee.lastName}} </li>
+                        <li class="list-group-item">Age: {{employee.age}}</li>
+                        <li class="list-group-item">Salary: {{employee.salary}}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a [routerLink]="" replaceUrl="true" (click)="detailNavigate(employee.id)" class="card-link">Detail</a>
+                        <a [routerLink]="" replaceUrl="true" (click)="editEmployee(employee.id)" class="card-link">Edit</a>
+                        <a [routerLink]="" (click)="deleteEmployee(employee.id)" class="card-link text-danger">Delete</a>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </cdk-virtual-scroll-viewport>       
+</div>
+<!-- <ul>
+    <li *ngFor="let employee of employees">
+        {{employee.id}} {{employee.name}} {{employee.age}} {{employee.salary}}
+    </li>
+</ul> -->
