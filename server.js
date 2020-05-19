@@ -101,11 +101,11 @@ app.post('/api/add',function(req,res){
 // const app = express();
 // document.writeln('<script type="text/javascrit" src="/server/server.js"> </script>')
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/Emanager'));
 
-app.get('*', function(req,res) {
+app.get('/*', function(req,res) {
     
-res.sendFile(path.resolve(__dirname+'/index.html'));
+res.sendFile(path.join(__dirname+'/dist/Emanager/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
