@@ -70,7 +70,7 @@ export class EmployeelistComponent implements OnInit {
     this._state = this._employeeService.getState();
     setTimeout(() => {
       this.viewPort.scrollToIndex(this._state, 'auto');
-      },0.5);
+      },0.4);
     // this.viewPort.scrollToIndex(this._employeeService.getState());
     this.viewPort.scrolledIndexChange.subscribe(e=>this._employeeService.setState(e));
   }
