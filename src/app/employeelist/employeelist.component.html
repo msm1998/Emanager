@@ -4,7 +4,7 @@
     </div>
     <h3  *ngIf="error" class="text-center alert alert-danger notify"> {{error}}</h3>
     <h3 *ngIf="loading==true" class="text-center alert alert-success notify">loading...</h3> 
-    <cdk-virtual-scroll-viewport *ngIf="!loading" itemSize="100" style="height:600px;width: 100%;overflow-x: hidden;" id="parent">   
+    <cdk-virtual-scroll-viewport  itemSize="100" style="height:600px;width: 100%;overflow-x: hidden;" id="parent">   
         <div class="row" id="child">
             <!-- <div class="col mb-4">
             </div> -->

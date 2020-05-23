@@ -5,11 +5,20 @@ import {catchError, shareReplay, map} from 'rxjs/operators';
 import { IEmployee, Employee } from '../interface/employee';
 @Injectable()
 export class EmployeeService {
-  base_url: string="https://tcs-emanager.herokuapp.com/api/";
-  list:Observable<IEmployee[]>;
+  // base_url: string="https://tcs-emanager.herokuapp.com/api/";
+  base_url: string="http://localhost:3000/api/";
 
+  list:Observable<IEmployee[]>;
+  _index:number=0;
   employee:Observable<IEmployee[]>;
   constructor(private http:HttpClient) { }
+  
+  setState(index:number){
+    this._index=index;
+  }
+  getState(){
+    return this._index;
+  }
   getEmployeeList():Observable<IEmployee[]>{
     if(!this.list){
       console.log('returning cache list');
